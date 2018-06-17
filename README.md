@@ -15,6 +15,11 @@
 [References](#ref)   
 
 ## File Legend<a name="legend"></a>
+***midas15_pulm_emb_data_v1.R***: current (06/16/2018) version of data preprocessing script, up to case/control dataset upload to the server. 
 
 ## Daily Logs<a name="logs"></a>
+### 06/15/2018
 * Repository created
+
+### 06/16/2018
+* Case/control sets created. Upload to the server after rerun of the script (running now)
