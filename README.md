@@ -18,6 +18,9 @@
 ***midas15_pulm_emb_data_v1.R***: current (06/16/2018) version of data preprocessing script, up to case/control dataset upload to the server. 
 
 ## Daily Logs<a name="logs"></a>
+### 06/18/2018
+* Reran data script, saved the cases and controls to the server
+
 ### 06/15/2018
 * Repository created
 

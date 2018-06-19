@@ -15,9 +15,9 @@ date()
 require(data.table)
 require(knitr)
 require(icd)
-require(foreach)
-require(parallel)
-require(doParallel)
+# require(foreach)
+# require(parallel)
+# require(doParallel)
 
 # PART I: Load MIDAS----
 # NOTE: data was preprocessed. See project 
@@ -115,19 +115,8 @@ dx <- data.table(Record_ID = 1:nrow(midas15),
                  midas15[, DX1:DX9])
 dx
 
-# Convert ICD9 & 10 to comorbidities----
-dx <- subset(dt.adm,
-             # dt.adm$hznkey %in% id.match,
-             select = c("hznkey",
-                        paste("DIAG_LN",
-                              1:10,
-                              sep = "")))
-dx
-
-cl <- makeCluster(getOption("cl.cores",
-                            detectCores() - 1))
-cl
-
+# cl <- makeCluster(getOption("cl.cores",
+#                             detectCores() - 1))
 # Option 1
 # # On Windows: very slow, noparallelizaion, and huge drain on CPU. 
 # # Deleting 'cl' clears he memory. Why doesn't it work?
@@ -242,13 +231,13 @@ write.csv(out,
 case <- subset(dt1,
                Patient_ID %in% comorb$Patient_ID[comorb$`ATRIAL FIBRILLATION`])
 save(case,
-     file = file.path("docs/case.RData"), 
+     file = file.path("data/case.RData"), 
      compress = FALSE)
 
 ctrl <- subset(dt1,
                Patient_ID %in% comorb$Patient_ID[!comorb$`ATRIAL FIBRILLATION`])
 save(ctrl,
-     file = file.path("docs/ctrl.RData"), 
+     file = file.path("data/ctrl.RData"), 
      compress = FALSE)
 
 sink()
