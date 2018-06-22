@@ -19,7 +19,7 @@
 
 ## Daily Logs<a name="logs"></a>
 ### 06/18/2018
-* Reran data script, saved the cases and controls to the server
+* Reran data script, saved the cases and controls to the server.    
 
 ### 06/15/2018
 * Repository created
